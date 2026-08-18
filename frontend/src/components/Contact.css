@@ -111,23 +111,15 @@
 }
 
 .form-status {
-    margin: 5px 0 0;
-
-    padding: 12px 15px;
-
-    border-radius: 8px;
-
+    margin-top: 1rem;
     font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .form-status.success {
-    background: #eefaf1;
-    border: 1px solid #a8d8b4;
-    color: #24733a;
+    color: #7cff9b;
 }
 
 .form-status.error {
-    background: #fff1f1;
-    border: 1px solid #e0aaaa;
-    color: #a33a3a;
+    color: #ff7c7c;
 }

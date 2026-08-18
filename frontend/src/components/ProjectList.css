@@ -82,6 +82,18 @@
         0 0 35px rgba(77, 171, 247, 0.25);
 }
 
+.projects-status {
+    width: 100%;
+    padding: 3rem 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+.projects-error {
+    opacity: 1;
+}
+
 @media (max-width: 900px) {
     .project-list {
         grid-template-columns: repeat(2, 1fr);

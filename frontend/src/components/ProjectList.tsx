@@ -33,12 +33,20 @@ export default function ProjectList() {
 }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
-    }
+    return (
+        <div className="projects-status">
+            Loading projects...
+        </div>
+    );
+}
 
-    if (error) {
-        return <div>{error}</div>;
-    }
+if (error) {
+    return (
+        <div className="projects-status projects-error">
+            {error}
+        </div>
+    );
+}
 
     const filteredProjects =
         selectedCategory === 'All'
@@ -66,13 +74,19 @@ export default function ProjectList() {
             </div>
 
             <div id="projects" className="project-list">
-                {filteredProjects.map(project => (
-                    <ProjectCard
-                        key={project.id}
-                        project={project}
-                    />
-                ))}
-            </div>
+    {filteredProjects.length > 0 ? (
+        filteredProjects.map(project => (
+            <ProjectCard
+                key={project.id}
+                project={project}
+            />
+        ))
+    ) : (
+        <div className="projects-status">
+            No projects found in this category.
+        </div>
+    )}
+</div>
         </>
     );
 }

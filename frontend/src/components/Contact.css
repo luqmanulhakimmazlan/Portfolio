@@ -123,3 +123,20 @@
 .form-status.error {
     color: #ff7c7c;
 }
+
+@media (max-width: 768px) {
+    .contact {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+
+    .contact input,
+    .contact textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

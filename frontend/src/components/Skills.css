@@ -1,16 +1,16 @@
 .skills {
     max-width: 1000px;
-    margin: 0 auto;
 
+    margin: 0 auto;
     padding: 100px 20px;
 }
 
 .skills h2 {
     margin: 0 0 40px;
 
-    font-size: clamp(2rem, 4vw, 3.5rem);
-
     color: #222;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 .skills-grid {
@@ -39,17 +39,17 @@
 .skill-card h3 {
     margin: 0 0 8px;
 
-    font-size: 1.1rem;
-
     color: #222;
+
+    font-size: 1.1rem;
 }
 
 .skill-card p {
     margin: 0;
 
-    font-size: 0.85rem;
-
     color: #777;
+
+    font-size: 0.85rem;
 }
 
 /* Hover */

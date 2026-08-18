@@ -22,7 +22,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                    href="https://github.com/"
+                    href="https://github.com/luqmanulhakimmazlan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hero-button secondary"

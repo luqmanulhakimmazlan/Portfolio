@@ -1,8 +1,8 @@
 .about {
-    padding: 100px 20px;
-
     max-width: 900px;
+
     margin: 0 auto;
+    padding: 100px 20px;
 }
 
 .about-content {
@@ -12,20 +12,20 @@
 .section-label {
     margin-bottom: 10px;
 
+    color: #4dabf7;
+
     font-size: 0.8rem;
     font-weight: 700;
 
     letter-spacing: 2px;
-
-    color: #4dabf7;
 }
 
 .about h2 {
     margin: 0 0 25px;
 
-    font-size: clamp(2rem, 4vw, 3.5rem);
-
     color: #222;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 .about p:not(.section-label) {
@@ -35,4 +35,15 @@
 
     font-size: 1.05rem;
     line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .about {
+        padding: 70px 20px;
+    }
+
+    .about p:not(.section-label) {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
 }

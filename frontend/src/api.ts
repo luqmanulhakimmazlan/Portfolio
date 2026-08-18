@@ -43,11 +43,13 @@ export async function sendContactMessage(
         );
 
         Object.assign(error, {
+            status: response.status,
             errors: data.errors,
         });
 
         throw error;
     }
+    
 
     return data.message;
 }

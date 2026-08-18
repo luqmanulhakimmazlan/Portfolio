@@ -43,34 +43,39 @@ export default function Contact() {
             setSubject('');
             setMessage('');
         } catch (error) {
-            if (error instanceof Error) {
-                const validationErrors = (
-                    error as Error & {
-                        errors?: Record<string, string[]>;
-                    }
-                ).errors;
+        if (error instanceof Error) {
+        const typedError = error as Error & {
+            status?: number;
+            errors?: Record<string, string[]>;
+        };
 
-                if (validationErrors) {
-                    const firstError = Object.values(
-                        validationErrors
-                    )[0]?.[0];
+        if (typedError.status === 429) {
+            setStatus(
+                'Too many attempts. Please try again later.'
+            );
+        } else if (typedError.errors) {
+            const firstError = Object.values(
+                typedError.errors
+            )[0]?.[0];
 
-                    setStatus(
-                        firstError || error.message
-                    );
-                } else {
-                    setStatus(error.message);
-                }
-            } else {
-                setStatus(
-                    'Failed to connect to the server.'
-                );
-            }
+            setStatus(
+                firstError || typedError.message
+            );
+        } else {
+            setStatus(typedError.message);
+        }
+    } else {
+        setStatus(
+            'Failed to connect to the server.'
+        );
+    }
 
-            setStatusType('error');
-        } finally {
+    setStatusType('error');
+} finally {
             setSubmitting(false);
         }
+
+        
     }
 
     return (
@@ -95,6 +100,7 @@ export default function Contact() {
                             setName(event.target.value)
                         }
                         placeholder="Your name"
+                        required
                     />
                 </div>
 
@@ -112,6 +118,7 @@ export default function Contact() {
                             setEmail(event.target.value)
                         }
                         placeholder="your@email.com"
+                        required
                     />
                 </div>
 
@@ -129,6 +136,7 @@ export default function Contact() {
                             setSubject(event.target.value)
                         }
                         placeholder="Project Inquiry"
+                        required
                     />
                 </div>
 

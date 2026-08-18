@@ -1,0 +1,38 @@
+.about {
+    padding: 100px 20px;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.section-label {
+    margin-bottom: 10px;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #4dabf7;
+}
+
+.about h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    color: #222;
+}
+
+.about p:not(.section-label) {
+    margin-bottom: 15px;
+
+    color: #666;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}

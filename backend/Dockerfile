@@ -25,4 +25,4 @@ RUN composer dump-autoload --optimize
 
 RUN php artisan optimize
 
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=${PORT}"]

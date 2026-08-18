@@ -16,9 +16,12 @@ COPY composer.json composer.lock ./
 RUN composer install \
     --no-dev \
     --optimize-autoloader \
-    --no-interaction
+    --no-interaction \
+    --no-scripts
 
 COPY . .
+
+RUN composer dump-autoload --optimize
 
 RUN php artisan optimize
 
